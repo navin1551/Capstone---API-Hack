@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+}
+
+#search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+
+.results-page {
+    display: none;
+    margin-top: 60px;
+}
+
+.results {
+    height: 250px;
+    width: 250px;
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+}
