@@ -8,7 +8,7 @@ function searchButtonHandle() {
         const localSearch = $('#local-search').val();
         const stateSearch = $('#state-search').val();
         getSchoolDiggerData(localSearch, stateSearch);
-        // getZillowData(localSearch);
+        //getZillowData(localSearch);
         getFoursquareData(localSearch);
         $('.results-page').show();
     })
@@ -66,18 +66,16 @@ function getZillowData(query) {
 //----------FUNCTIONS FOR FOURSQUARE API---------------
 
 //function to construct query parameters for URL
-
 let foursquareBaseURL = "https://api.foursquare.com/v2/venues/search";
 let fourSquareClient_id = "0JGSZA4ZMJSTZQYMXUDX3FTJ4VHZZ1PU3TISQ4R4XAPDVMCW";
 let fourSquareClient_secret = "0BZDVGOMLQZDCWOAWRFKA0XKQTEBHQPA0PEZZQNI5KBOHK5T";
-let limit = 20;
+let limit = 10;
 
 //function to retrieve data using parameters 
-
 function getFoursquareData(query){
     let params = {
         near: query,
-        categoryId: '4d4b7105d754a06374d81259',
+        categoryId: '4bf58dd8d48988d1ae941735',
         v: '20190101',
         client_id: fourSquareClient_id,
         client_secret: fourSquareClient_secret,
@@ -98,7 +96,7 @@ function getFoursquareData(query){
         displayFourSquareData(responseJson)
     })
     .catch(err => {
-        $('#error-message').text('City Not Found');
+        $('#error-message').text('Try Again Later');
     });
 
 }
@@ -108,12 +106,12 @@ function getFoursquareData(query){
 function displayFourSquareData(responseJson) {
     $('.amenities-list').empty();
     $('#error-message').empty();
-    if (responseJson.venues.length > 0) {
-        for (let i = 0; i < responseJson.venues.length; i++) {
+    let venues = responseJson.response.venues;
+    if (venues.length > 0) {
+        for (let i = 0; i < venues.length; i++) {
             $('.amenities-list').append(
-                `<li><h3>${responseJson.venues[i].id}</h3>
-                <p>${responseJson.venues[i].name}</p>
-                <p>${responseJson.venues[i].location}</p>
+                `<li><h3>${venues[i].name}</h3>
+                <p>${venues[i].location.address}</p>
                 </li>`);
                 $('.results-page').show();
         }}
@@ -124,7 +122,10 @@ function displayFourSquareData(responseJson) {
 
 
 
-//--------FUCTIONS FOR SCHOOL DIGGER API-----------
+
+
+
+//--------FUNCTIONS FOR SCHOOL DIGGER API-----------
 
 //function to construct query parameters for URL
 let schoolDiggerBaseURL = "https://api.schooldigger.com/v1.1/schools"
@@ -132,7 +133,6 @@ let schoolDiggerAppID = 'f8c794b6';
 let schoolDiggerAppKey = 'f678d035c2e5dece512f31b27b32266e';
 
 //function to retrieve data using parameters 
-
 function getSchoolDiggerData(city, state){
     let params = {
         st: state,
@@ -155,7 +155,8 @@ function getSchoolDiggerData(city, state){
         displaySchoolDiggerData(responseJson)
     })
     .catch(err => {
-        $('#error-message').text('City Not Found');
+        console.log(err);
+        $('#error-message').text('Try Again Later');
     });
 
 }
@@ -163,18 +164,19 @@ function getSchoolDiggerData(city, state){
 //function to display School Digger results to DOM
 function displaySchoolDiggerData(responseJson) {
     $('.school-list').empty();
+    $('#error-message').empty();
     if (responseJson.schoolList.length > 0) {
         for (let i = 0; i < responseJson.schoolList.length; i++) {
             $('.school-list').append(
                 `<li><h3>${responseJson.schoolList[i].schoolName}</h3>
-                <a href= "${response.Json.schoolList[i].url}" target= "_blank">Link to school</a>
-                <p>${responseJson.schoolList[i].address}</p>
+                <a href= "${responseJson.schoolList[i].url}" target= "_blank">Link to school</a>
+                <p>${responseJson.schoolList[i].address.street}</p>
                 </li>`);
         $('.results-page').show();
         }}
-        else {
-            $('#error-message').text('RESULTS NOT FOUND');
-        }
+    else {
+        $('#error-message').text('City Not Found');
+    }
 
 };
 
