@@ -1,62 +1,44 @@
 'use strict';
 
+let localSearch;
+let stateSearch;
 
 //function for when user enters city and state and clicks search
 function searchButtonHandle() {
     $('#search-form').on('submit', event => {
         event.preventDefault();
-        const localSearch = $('#local-search').val();
-        const stateSearch = $('#state-search').val();
+        localSearch = $('#local-search').val();
+        stateSearch = $('#state-search').val();
+        //getSchoolDiggerData(localSearch, stateSearch);
+        //getFoursquareData(localSearch);
+        let imagesPage = displayImagesPage();
+        $('.education-level-page').html(imagesPage);
+        educationLevelClicker();
+    })
+}
+
+
+
+//---------FUNCTIONS FOR EDUCATION LEVEL SELECTOR IMAGES SCREEN
+
+function educationLevelClicker() {
+    $('.elementary-student').on('click', 'education-images', function(event) {
         getSchoolDiggerData(localSearch, stateSearch);
-        //getZillowData(localSearch);
+    });
+    $('.college-student').on('click', 'education-images', function(event) {
         getFoursquareData(localSearch);
-        $('.results-page').show();
-    })
-}
-
-
-
-
-//------------FUNCTIONS FOR ZILLOW API-----------
-
-//function to contruct query parameters for URL
-const zillowApiKey = 'X1-ZWz183s1miltzf_77v70';
-
-const zillowBaseUrl = 'http://www.zillow.com/webservice/GetRegionChildren.htm'
-
-function formatQueryParams(params) {
-    const queryItemsConstruct = Object.keys(params)
-        .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
-    return queryItemsConstruct.join('&');
-}
-
-//function to retrieve data using parameters
-function getZillowData(query) {
-    const params = {
-        "zws-id": zillowApiKey,
-         state: query,
-         city: query
-    };
-    const queryString = formatQueryParams(params);
-    const url = zillowBaseUrl + '?' + queryString;
-
-    fetch(url)
-    .then(response => {
-        if (response.ok) {
-            return response.json();
-        }
-        throw new Error(response.statusText);
-    })
-    .then(responseJson => {
-        console.log(responseJson)
-    })
-    .catch(err => {
-        $('#error-message').text('City Not Found');
     });
 }
 
 
-//function to display Zillow results to DOM
+
+//Function to display education images screen
+function displayImagesPage() {
+    return `<section class= "education-images">
+        <img class= "elementary-student image" src= 'https://st4.depositphotos.com/4778169/22039/v/1600/depositphotos_220397300-stock-illustration-cute-indonesian-elementary-school-girl.jpg' alt='cartoon elementary school student'/>
+        <img class= "college-student image" src= 'https://png.pngtree.com/element_origin_min_pic/17/03/08/7a539c7a7e796d748efb3d9eacb74570.jpg' alt='cartoon college student'/>
+    </section>`
+};
 
 
 
@@ -66,10 +48,16 @@ function getZillowData(query) {
 //----------FUNCTIONS FOR FOURSQUARE API---------------
 
 //function to construct query parameters for URL
+function formatQueryParams(params) {
+    const queryItemsConstruct = Object.keys(params)
+        .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
+    return queryItemsConstruct.join('&');
+}
+
 let foursquareBaseURL = "https://api.foursquare.com/v2/venues/search";
 let fourSquareClient_id = "0JGSZA4ZMJSTZQYMXUDX3FTJ4VHZZ1PU3TISQ4R4XAPDVMCW";
 let fourSquareClient_secret = "0BZDVGOMLQZDCWOAWRFKA0XKQTEBHQPA0PEZZQNI5KBOHK5T";
-let limit = 10;
+let limit = 20;
 
 //function to retrieve data using parameters 
 function getFoursquareData(query){
@@ -104,12 +92,12 @@ function getFoursquareData(query){
 
 //function to display Foursquare results to DOM
 function displayFourSquareData(responseJson) {
-    $('.amenities-list').empty();
+    $('.college-list').empty();
     $('#error-message').empty();
     let venues = responseJson.response.venues;
     if (venues.length > 0) {
         for (let i = 0; i < venues.length; i++) {
-            $('.amenities-list').append(
+            $('.college-list').append(
                 `<li><h3>${venues[i].name}</h3>
                 <p>${venues[i].location.address}</p>
                 </li>`);
@@ -119,9 +107,6 @@ function displayFourSquareData(responseJson) {
         $('#error-message').text('City Not Found');
     }
 };
-
-
-
 
 
 
@@ -182,5 +167,5 @@ function displaySchoolDiggerData(responseJson) {
 
 
 
-
 $(searchButtonHandle);
+// $(educationLevelClicker);

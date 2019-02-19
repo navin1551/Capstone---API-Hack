@@ -6,10 +6,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 30px;
 }
 
 h1 {
     text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+input {
+    margin-top: 5px;
 }
 
 
@@ -24,4 +33,18 @@ h1 {
     border: 1px solid black;
     margin-left: auto;
     margin-right: auto;
+    overflow-y: scroll;
+}
+
+.image {
+    height: 150px;
+    width: 150px;
+    margin-top: 5px;
+    border: 1px solid black;
+}
+
+.education-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
