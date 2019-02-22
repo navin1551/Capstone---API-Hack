@@ -3,49 +3,64 @@
 let localSearch;
 let stateSearch;
 
-//function for when user enters city and state and clicks search
+//----------FUNCTION FOR WHEN USER ENTERS CITY AND STATE AND SUBMITS SEARCH--------//
 function searchButtonHandle() {
     $('#search-form').on('submit', event => {
         event.preventDefault();
+        $('#search-form').hide();
+        $('h3').hide();
+        $('#new-search-button').show();
         localSearch = $('#local-search').val();
         stateSearch = $('#state-search').val();
-        //getSchoolDiggerData(localSearch, stateSearch);
-        //getFoursquareData(localSearch);
+        $('#local-search').val('');
+        $('#state-search').val('');
         let imagesPage = displayImagesPage();
         $('.education-level-page').html(imagesPage);
         educationLevelClicker();
+        searchNewCityClicker();
     })
 }
 
 
+//---------FUNCTIONS FOR EDUCATION LEVEL SELECTOR SCREEN------------//
 
-//---------FUNCTIONS FOR EDUCATION LEVEL SELECTOR IMAGES SCREEN
-
+//function for when user clicks on either elementary or college student image 
 function educationLevelClicker() {
-    $('.elementary-student').on('click', 'education-images', function(event) {
+    $('.education-images').on('click', '.elementary-student', function(event) {
+        $('.education-images').hide();
+        $('.college-results').hide();
         getSchoolDiggerData(localSearch, stateSearch);
     });
-    $('.college-student').on('click', 'education-images', function(event) {
+    $('.education-images').on('click', '.college-student', function(event) {
+        $('.education-images').hide();
+        $('.school-results').hide();
         getFoursquareData(localSearch);
     });
 }
 
+//function for when user clicks the new search button on education level selector screen or results screen
+function searchNewCityClicker() {
+    $('#new-search-button').on('click', function(event) {
+        //$('.education-level-page').html('');
+        //$('.results-page').hide();
+        //$('#search-form').show();
+        //$('h3').show();
+        location.reload();
+    })
+}
 
-
-//Function to display education images screen
+//Function to display education level selector screen
 function displayImagesPage() {
     return `<section class= "education-images">
+        <span>I need a K-12 school</span>
         <img class= "elementary-student image" src= 'https://st4.depositphotos.com/4778169/22039/v/1600/depositphotos_220397300-stock-illustration-cute-indonesian-elementary-school-girl.jpg' alt='cartoon elementary school student'/>
+        <span>I need a college/university</span>
         <img class= "college-student image" src= 'https://png.pngtree.com/element_origin_min_pic/17/03/08/7a539c7a7e796d748efb3d9eacb74570.jpg' alt='cartoon college student'/>
-    </section>`
+    </section>`;
 };
 
 
-
-
-
-
-//----------FUNCTIONS FOR FOURSQUARE API---------------
+//----------FUNCTIONS FOR FOURSQUARE API---------------//
 
 //function to construct query parameters for URL
 function formatQueryParams(params) {
@@ -89,7 +104,6 @@ function getFoursquareData(query){
 
 }
 
-
 //function to display Foursquare results to DOM
 function displayFourSquareData(responseJson) {
     $('.college-list').empty();
@@ -109,8 +123,7 @@ function displayFourSquareData(responseJson) {
 };
 
 
-
-//--------FUNCTIONS FOR SCHOOL DIGGER API-----------
+//--------FUNCTIONS FOR SCHOOL DIGGER API-----------//
 
 //function to construct query parameters for URL
 let schoolDiggerBaseURL = "https://api.schooldigger.com/v1.1/schools"
@@ -166,6 +179,4 @@ function displaySchoolDiggerData(responseJson) {
 };
 
 
-
 $(searchButtonHandle);
-// $(educationLevelClicker);

@@ -13,6 +13,10 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    text-align: center;
+}
+
 h3 {
     text-align: center;
 }
@@ -21,14 +25,19 @@ input {
     margin-top: 5px;
 }
 
+#local-search,
+#state-search {
+    font-style: italic;
+}
 
 .results-page {
     display: none;
     margin-top: 60px;
 }
 
-.results {
-    height: 250px;
+.school-results,
+.college-results {
+    height: 350px;
     width: 250px;
     border: 1px solid black;
     margin-left: auto;
@@ -44,7 +53,21 @@ input {
 }
 
 .education-images {
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#new-search-button {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+}
+
+
+span {
+    margin-bottom: 0%;
+    margin-top: 10px;
 }
