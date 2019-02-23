@@ -1,12 +1,22 @@
 * {
     box-sizing: border-box;
+}
+
+html {
+    background: url('https://backgroundcheckall.com/wp-content/uploads/2017/12/education-background-images-hd.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+body {
+    color: white;
+    background-attachment: fixed;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
-    background-image: url('https://backgroundcheckall.com/wp-content/uploads/2017/12/education-background-images-hd.jpg');
-    color: white;
-}
 
 #search-form {
     display: flex;
@@ -19,10 +29,13 @@ body {
     background-color: yellow;
     opacity: 0.7;
     position: absolute;
-    top: 45%;
-    left: 33%;
+    top: 35%;
+    left: 40%;
     font-weight: bold;
     border: 1px solid brown;
+    border-radius: 15px 50px;
+    width: 70px;
+    height: 35px;
 
 }
 
@@ -32,8 +45,17 @@ h3 {
     text-align: center;
 }
 
+h3 {
+    font-size: 10px;
+}
+
 input {
     margin-top: 5px;
+}
+
+.college-list > li,
+.school-list > li, {
+    font-family: 'Indie Flower', cursive;
 }
 
 #local-search,
@@ -49,7 +71,7 @@ input {
 
 .results-page {
     display: none;
-    margin-top: 60px;
+    margin-top: 30px;
 }
 
 .school-results,
@@ -58,9 +80,8 @@ input {
     width: 250px;
     margin-left: auto;
     margin-right: auto;
-    overflow: scroll;
+    overflow: visible;
     font-size: 10px;
-    background-color: gray;
 }
 
 .school-results > h2,
@@ -69,31 +90,40 @@ input {
     font-size: 20px;
     color: yellow;
     opacity: 0.7;
+    text-decoration: underline;
 }
 
 .image {
     height: 150px;
     width: 150px;
-    margin-top: 5px;
+    margin-top: 20px;
     cursor: pointer;
     opacity: 0.8;
 }
 
 .education-images {
-    margin-top: 30px;
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+#education-level-question {
+    margin-top: 0%;
+    color: white;
+    font-size: 20px;
+}
+
 #new-search-button {
     display: none;
     position: absolute;
-    bottom: 10px;
-    left: 40%;
+    bottom: 3%;
+    left: 37%;
     background-color: yellow;
     opacity: 0.7;
     border: 2px solid brown;
+    margin-bottom: 0%;
+    font-weight: bold;
 }
 
 
@@ -121,11 +151,8 @@ span {
     margin-top: 0%;
 }
 
-@media screen and (min-width: 425px) {
-    body {
-        background-size: 100%;
-    }
-
+@media screen and (min-width: 768px) {
+    
     h1 {
         font-size: 35px;
     }
@@ -158,17 +185,23 @@ span {
     }
 
     #show-me-schools-button {
+        top: 45%;
         left: 45%;
         width: 100px;
         height: 50px;
         border: 2px solid brown;
-        font-size: 10px;
+        font-size: 15px;
     }
 
     .education-images {
      position: absolute;
      top: 0%;
      left: 20%;
+    }
+
+    #education-level-question {
+        font-size: 30px;
+
     }
 
     #new-search-button {
@@ -178,6 +211,7 @@ span {
         border: 2px solid brown;
         width: 175px;
         font-size: 15px;
+        position: fixed;
 
     }
 
@@ -197,7 +231,62 @@ span {
         margin-right: auto;
         overflow: visible;
         font-size: 10px;
-        background-color: gray;
     }
 
+}
+
+@media screen and (min-width: 1024px) {
+    h1 {
+        font-size: 47px;
+    }
+
+    h3 {
+        font-size: 17px;
+    }
+
+    #show-me-schools-button {
+        top: 45%;
+        left: 45%;
+        width: 125px;
+        height: 50px;
+        border: 3px solid brown;
+        font-size: 18px;
+    }
+
+    .image {
+        height: 225px;
+        width: 225px;
+    }
+
+    #new-search-button {
+        position: absolute;
+        bottom: 96%;
+        left: 86%;
+        border: 3px solid brown;
+        width: 175px;
+        font-size: 15px;
+        position: fixed;
+    }
+
+    .school-results > h2,
+    .college-results > h2 {
+        margin-top: 0%;
+        font-size: 30px;
+    }
+
+    #local-search {
+        height: 90px;
+        width: 650px;
+        font-size: 50px;
+    }
+
+    #state-search {
+        height: 90px;
+        width: 100px;
+        font-size: 50px;
+    }
+
+    #education-level-question {
+        font-size: 40px;
+    }
 }

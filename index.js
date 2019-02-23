@@ -53,9 +53,8 @@ function searchNewCityClicker() {
 //Function to display education level selector screen
 function displayImagesPage() {
     return `<section class= "education-images">
-        <span>I need a K-12 school</span>
+        <span id= "education-level-question">I'm looking for...</span>
         <img class= "apple image" src= 'https://unixtitan.net/images/apple-clip-ten-4.png' alt='image of apple'/>
-        <span>I need a college/university</span>
         <img class= "orange image" src= 'https://cdn.pixabay.com/photo/2016/03/03/17/15/fruit-1234657__340.png' alt='image of orange'/>
     </section>`;
 };
@@ -73,7 +72,7 @@ function formatQueryParams(params) {
 let foursquareBaseURL = "https://api.foursquare.com/v2/venues/search";
 let fourSquareClient_id = "0JGSZA4ZMJSTZQYMXUDX3FTJ4VHZZ1PU3TISQ4R4XAPDVMCW";
 let fourSquareClient_secret = "0BZDVGOMLQZDCWOAWRFKA0XKQTEBHQPA0PEZZQNI5KBOHK5T";
-let limit = 20;
+let limit = 15;
 
 //function to retrieve data using parameters 
 function getFoursquareData(query){
@@ -168,7 +167,6 @@ function displaySchoolDiggerData(responseJson) {
         for (let i = 0; i < responseJson.schoolList.length; i++) {
             $('.school-list').append(
                 `<li><h3>${responseJson.schoolList[i].schoolName}</h3>
-                <a href= "${responseJson.schoolList[i].url}" target= "_blank">Link to school</a>
                 <p>${responseJson.schoolList[i].address.street}</p>
                 </li>`);
         $('.results-page').show();
