@@ -3,6 +3,19 @@
 let localSearch;
 let stateSearch;
 
+//----------FUNCTIONS FOR LOCAL AND STATE SEARCH INPUT EXAMPLE VALUES---------//
+var searchEx = ['Los Angeles', 'Portland', 'Las Vegas', 'San Francisco', 'New York', 'Chicago', 'Miami', 'Houston', 'Seattle', 'Huntington Beach', 'Detroit', 'San Diego', 'Atlanta'];
+setInterval(function() {
+    $('#local-search').attr('placeholder', searchEx[searchEx.push(searchEx.shift()) -1]);
+}, 3000);
+
+var searchStateEx = ['CA', 'OR', 'NV', 'CA', 'NY', 'IL', 'FL', 'TX', 'WA', 'CA', 'MI', 'CA', 'GA'];
+setInterval(function() {
+    $('#state-search').attr('placeholder', searchStateEx[searchStateEx.push(searchStateEx.shift()) -1]);
+}, 3000);
+
+
+
 //----------FUNCTION FOR WHEN USER ENTERS CITY AND STATE AND SUBMITS SEARCH--------//
 function searchButtonHandle() {
     $('#search-form').on('submit', event => {
