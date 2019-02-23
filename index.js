@@ -8,6 +8,7 @@ function searchButtonHandle() {
     $('#search-form').on('submit', event => {
         event.preventDefault();
         $('#search-form').hide();
+        $('h1').hide();
         $('h3').hide();
         $('#new-search-button').show();
         localSearch = $('#local-search').val();
@@ -26,12 +27,12 @@ function searchButtonHandle() {
 
 //function for when user clicks on either elementary or college student image 
 function educationLevelClicker() {
-    $('.education-images').on('click', '.elementary-student', function(event) {
+    $('.education-images').on('click', '.apple', function(event) {
         $('.education-images').hide();
         $('.college-results').hide();
         getSchoolDiggerData(localSearch, stateSearch);
     });
-    $('.education-images').on('click', '.college-student', function(event) {
+    $('.education-images').on('click', '.orange', function(event) {
         $('.education-images').hide();
         $('.school-results').hide();
         getFoursquareData(localSearch);
@@ -53,9 +54,9 @@ function searchNewCityClicker() {
 function displayImagesPage() {
     return `<section class= "education-images">
         <span>I need a K-12 school</span>
-        <img class= "elementary-student image" src= 'https://st4.depositphotos.com/4778169/22039/v/1600/depositphotos_220397300-stock-illustration-cute-indonesian-elementary-school-girl.jpg' alt='cartoon elementary school student'/>
+        <img class= "apple image" src= 'https://unixtitan.net/images/apple-clip-ten-4.png' alt='image of apple'/>
         <span>I need a college/university</span>
-        <img class= "college-student image" src= 'https://png.pngtree.com/element_origin_min_pic/17/03/08/7a539c7a7e796d748efb3d9eacb74570.jpg' alt='cartoon college student'/>
+        <img class= "orange image" src= 'https://cdn.pixabay.com/photo/2016/03/03/17/15/fruit-1234657__340.png' alt='image of orange'/>
     </section>`;
 };
 

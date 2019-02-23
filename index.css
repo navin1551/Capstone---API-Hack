@@ -1,22 +1,33 @@
 * {
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-image: url('https://backgroundcheckall.com/wp-content/uploads/2017/12/education-background-images-hd.jpg');
+    color: white;
 }
 
 #search-form {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     margin-top: 30px;
 }
 
-h1 {
-    text-align: center;
+#show-me-schools-button {
+    background-color: yellow;
+    opacity: 0.7;
+    position: absolute;
+    top: 45%;
+    left: 33%;
+    font-weight: bold;
+    border: 1px solid brown;
+
 }
 
-h2 {
-    text-align: center;
-}
-
+h1,
+h2,
 h3 {
     text-align: center;
 }
@@ -28,6 +39,12 @@ input {
 #local-search,
 #state-search {
     font-style: italic;
+    height: 50px;
+    opacity: 0.3;
+    font-size: 20px;
+    padding-right: 5px;
+    cursor: pointer;
+    border-bottom: solid 3px brown;
 }
 
 .results-page {
@@ -37,23 +54,33 @@ input {
 
 .school-results,
 .college-results {
-    height: 350px;
+    height: 425px;
     width: 250px;
-    border: 1px solid black;
     margin-left: auto;
     margin-right: auto;
-    overflow-y: scroll;
+    overflow: scroll;
+    font-size: 10px;
+    background-color: gray;
+}
+
+.school-results > h2,
+.college-results > h2 {
+    margin-top: 0%;
+    font-size: 20px;
+    color: yellow;
+    opacity: 0.7;
 }
 
 .image {
     height: 150px;
     width: 150px;
     margin-top: 5px;
-    border: 1px solid black;
+    cursor: pointer;
+    opacity: 0.8;
 }
 
 .education-images {
-    margin-top: 50px;
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -63,11 +90,114 @@ input {
     display: none;
     position: absolute;
     bottom: 10px;
-    left: 50%;
+    left: 40%;
+    background-color: yellow;
+    opacity: 0.7;
+    border: 2px solid brown;
 }
 
 
 span {
     margin-bottom: 0%;
     margin-top: 10px;
+    color: yellow;
+    opacity: 0.8;
+}
+
+#local-search {
+    width: 260px;
+}
+
+#state-search {
+    width: 50px;
+}
+
+.apple {
+    margin-bottom: 10px;
+}
+
+.school-list,
+.college-list {
+    margin-top: 0%;
+}
+
+@media screen and (min-width: 425px) {
+    body {
+        background-size: 100%;
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+
+    h3 {
+        margin-top: 0px;
+        font-size: 15px;
+    }
+
+    .main-page {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #search-form {
+        margin-top: 0%;
+    }
+
+    #local-search {
+        height: 70px;
+        width: 550px;
+        font-size: 40px;
+    }
+
+    #state-search {
+        height: 70px;
+        width: 100px;
+        font-size: 40px;
+    }
+
+    #show-me-schools-button {
+        left: 45%;
+        width: 100px;
+        height: 50px;
+        border: 2px solid brown;
+        font-size: 10px;
+    }
+
+    .education-images {
+     position: absolute;
+     top: 0%;
+     left: 20%;
+    }
+
+    #new-search-button {
+        position: absolute;
+        bottom: 95%;
+        left: 77%;
+        border: 2px solid brown;
+        width: 175px;
+        font-size: 15px;
+
+    }
+
+    .image {
+        height: 175px;
+        width: 175px;
+    }
+
+    .school-results,
+    .college-results {
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        height: 100%;
+        width: 450px;
+        margin-left: auto;
+        margin-right: auto;
+        overflow: visible;
+        font-size: 10px;
+        background-color: gray;
+    }
+
 }
