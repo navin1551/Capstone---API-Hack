@@ -36,7 +36,7 @@ body {
     border-radius: 15px 50px;
     width: 70px;
     height: 35px;
-
+    cursor: pointer;
 }
 
 h1,
@@ -124,6 +124,7 @@ input {
     border: 2px solid brown;
     margin-bottom: 0%;
     font-weight: bold;
+    cursor: pointer;
 }
 
 
