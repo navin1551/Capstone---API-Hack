@@ -55,7 +55,9 @@ function displayImagesPage() {
     return `<section class= "education-images">
         <span id= "education-level-question">I'm looking for...</span>
         <img class= "apple image" src= 'https://unixtitan.net/images/apple-clip-ten-4.png' alt='image of apple'/>
+        <span>K-12</span>
         <img class= "orange image" src= 'https://cdn.pixabay.com/photo/2016/03/03/17/15/fruit-1234657__340.png' alt='image of orange'/>
+        <span>Colleges/Universities</span>
     </section>`;
 };
 
