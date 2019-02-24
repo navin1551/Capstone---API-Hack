@@ -4,12 +4,12 @@ let localSearch;
 let stateSearch;
 
 //----------FUNCTIONS FOR LOCAL AND STATE SEARCH INPUT EXAMPLE VALUES---------//
-var searchEx = ['Los Angeles', 'Portland', 'Las Vegas', 'San Francisco', 'New York', 'Chicago', 'Miami', 'Houston', 'Seattle', 'Huntington Beach', 'Detroit', 'San Diego', 'Atlanta'];
+var searchEx = ['i.e. Los Angeles', 'i.e. Portland', 'i.e. Las Vegas', 'i.e. San Francisco', 'i.e. New York', 'i.e. Chicago', 'i.e. Miami', 'i.e. Houston', 'i.e. Seattle', 'i.e. Huntington Beach', 'i.e. Detroit', 'i.e. San Diego', 'i.e. Atlanta', 'i.e. Philadelphia', 'i.e. Charlotte'];
 setInterval(function() {
     $('#local-search').attr('placeholder', searchEx[searchEx.push(searchEx.shift()) -1]);
 }, 3000);
 
-var searchStateEx = ['CA', 'OR', 'NV', 'CA', 'NY', 'IL', 'FL', 'TX', 'WA', 'CA', 'MI', 'CA', 'GA'];
+var searchStateEx = ['CA', 'OR', 'NV', 'CA', 'NY', 'IL', 'FL', 'TX', 'WA', 'CA', 'MI', 'CA', 'GA', 'PA', 'NC'];
 setInterval(function() {
     $('#state-search').attr('placeholder', searchStateEx[searchStateEx.push(searchStateEx.shift()) -1]);
 }, 3000);
@@ -87,7 +87,7 @@ function formatQueryParams(params) {
 let foursquareBaseURL = "https://api.foursquare.com/v2/venues/search";
 let fourSquareClient_id = "0JGSZA4ZMJSTZQYMXUDX3FTJ4VHZZ1PU3TISQ4R4XAPDVMCW";
 let fourSquareClient_secret = "0BZDVGOMLQZDCWOAWRFKA0XKQTEBHQPA0PEZZQNI5KBOHK5T";
-let limit = 15;
+let limit = 7;
 
 //function to retrieve data using parameters 
 function getFoursquareData(query){
@@ -127,8 +127,8 @@ function displayFourSquareData(responseJson) {
     if (venues.length > 0) {
         for (let i = 0; i < venues.length; i++) {
             $('.college-list').append(
-                `<li><h3>${venues[i].name}</h3>
-                <p>${venues[i].location.address}</p>
+                `<li><h3 id="college-name">${venues[i].name}</h3>
+                <p id="college-address">${venues[i].location.address}</p>
                 </li>`);
                 $('.results-page').show();
         }}
@@ -150,6 +150,7 @@ function getSchoolDiggerData(city, state){
     let params = {
         st: state,
         city: city,
+        perPage: 7,
         appID: schoolDiggerAppID,
         appKey: schoolDiggerAppKey
     }
@@ -181,8 +182,8 @@ function displaySchoolDiggerData(responseJson) {
     if (responseJson.schoolList.length > 0) {
         for (let i = 0; i < responseJson.schoolList.length; i++) {
             $('.school-list').append(
-                `<li><h3>${responseJson.schoolList[i].schoolName}</h3>
-                <p>${responseJson.schoolList[i].address.street}</p>
+                `<li><h3 id="school-name">${responseJson.schoolList[i].schoolName}</h3>
+                <p id="school-address">${responseJson.schoolList[i].address.street}</p>
                 </li>`);
         $('.results-page').show();
         }}

@@ -32,7 +32,7 @@ body {
     left: 40%;
     font-weight: bold;
     border: 1px solid brown;
-    border-radius: 15px 50px;
+    border-radius: 15px;
     width: 70px;
     height: 35px;
     cursor: pointer;
@@ -53,16 +53,12 @@ h3 {
 }
 
 h3 {
-    font-size: 10px;
+    font-size: 12px;
+    font-family: 'Indie Flower', cursive;
 }
 
 input {
     margin-top: 5px;
-}
-
-.college-list > li,
-.school-list > li, {
-    font-family: 'Indie Flower', cursive;
 }
 
 #local-search,
@@ -94,7 +90,7 @@ input {
 .school-results > h2,
 .college-results > h2 {
     margin-top: 0%;
-    font-size: 20px;
+    font-size: 18px;
     color: yellow;
     opacity: 0.7;
     text-decoration: underline;
@@ -163,8 +159,28 @@ span {
 
 .school-list,
 .college-list {
-    margin-top: 0%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
+
+input::placeholder {
+    padding-left: 10px;
+}
+
+#college-address,
+#school-address {
+    font-size: 12px;
+    font-family: 'Indie Flower', cursive;
+    line-height: 3px;
+}
+
+#college-name,
+#school-name {
+    font-size: 15px;
+    font-family: 'Indie Flower', cursive;
+}
+
 
 @media screen and (min-width: 768px) {
     
@@ -248,6 +264,16 @@ span {
         font-size: 10px;
     }
 
+    #college-address,
+    #school-address {
+        font-size: 14px;
+    }
+    
+    #college-name,
+    #school-name {
+        font-size: 16px;
+    }
+
 }
 
 @media screen and (min-width: 1024px) {
@@ -256,7 +282,7 @@ span {
     }
 
     h3 {
-        font-size: 17px;
+        font-size: 22px;
     }
 
     #show-me-schools-button {
@@ -303,5 +329,16 @@ span {
 
     #education-level-question {
         font-size: 40px;
+    }
+
+    #college-address,
+    #school-address {
+        font-size: 18px;
+        line-height: 8px;
+    }
+    
+    #college-name,
+    #school-name {
+        font-size: 22px;
     }
 }
