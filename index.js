@@ -128,7 +128,7 @@ function displayFourSquareData(responseJson) {
         for (let i = 0; i < venues.length; i++) {
             $('.college-list').append(
                 `<li><h3 id="college-name">${venues[i].name}</h3>
-                <p id="college-address">${venues[i].location.address}</p>
+                <p id="college-address">${venues[i].location.address}, ${venues[i].location.city} ${venues[i].location.state} ${venues[i].location.postalCode}</p>
                 </li>`);
                 $('.results-page').show();
         }}
@@ -183,7 +183,7 @@ function displaySchoolDiggerData(responseJson) {
         for (let i = 0; i < responseJson.schoolList.length; i++) {
             $('.school-list').append(
                 `<li><h3 id="school-name">${responseJson.schoolList[i].schoolName}</h3>
-                <p id="school-address">${responseJson.schoolList[i].address.street}</p>
+                <p id="school-address">${responseJson.schoolList[i].address.html}</p>
                 </li>`);
         $('.results-page').show();
         }}
