@@ -102,6 +102,8 @@ input {
     margin-top: 20px;
     cursor: pointer;
     opacity: 0.8;
+    background-size: 150px 150px;
+    background-repeat: no-repeat;
 }
 
 .education-images {
@@ -154,6 +156,11 @@ span {
 
 .apple {
     margin-bottom: 10px;
+    background-image: url('https://unixtitan.net/images/apple-clip-ten-4.png');
+}
+
+.orange {
+    background-image: url('https://cdn.pixabay.com/photo/2016/03/03/17/15/fruit-1234657__340.png');
 }
 
 .school-list,
@@ -195,6 +202,14 @@ footer > span {
     color: black;
     font-weight: bold;
     position: fixed;
+}
+
+.header {
+    height: 30%;
+    margin-top: 30%;
+    margin-bottom: 35%;
+    font-family: 'Indie Flower', cursive;
+    font-size: 60px;
 }
 
 @media screen and (min-width: 768px) {
@@ -266,6 +281,7 @@ footer > span {
     .image {
         height: 165px;
         width: 165px;
+        background-size: 165px 165px;
     }
 
     .school-results,
@@ -291,6 +307,10 @@ footer > span {
         font-size: 16px;
     }
 
+    .header {
+        font-size: 65px;
+    }
+
 }
 
 @media screen and (min-width: 1024px) {
@@ -314,6 +334,15 @@ footer > span {
     .image {
         height: 225px;
         width: 225px;
+        background-size: 225px 225px;
+    }
+
+    .apple .header {
+        margin-top: 35%;
+    }
+
+    .orange .header {
+        margin-left: 0%;
     }
 
     #new-search-button {
@@ -361,5 +390,9 @@ footer > span {
 
     footer > span {
         font-size: 12px;
+    }
+
+    .header {
+        font-size: 85px;
     }
 }
