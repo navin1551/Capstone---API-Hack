@@ -55,10 +55,6 @@ function educationLevelClicker() {
 //function for when user clicks the new search button on education level selector screen or results screen
 function searchNewCityClicker() {
     $('#new-search-button').on('click', function(event) {
-        //$('.education-level-page').html('');
-        //$('.results-page').hide();
-        //$('#search-form').show();
-        //$('h3').show();
         location.reload();
     })
 }

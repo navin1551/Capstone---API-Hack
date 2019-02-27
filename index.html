@@ -5,50 +5,50 @@
         <meta charset= "UTF-8">
         <meta name= "viewport" content= "width= device-width, initial-scale= 1.0">
         <meta name= "description" content= "Search schools and colleges by city">
-        <link rel="stylesheet" href="index.css">
-        <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+        <link rel= "stylesheet" href= "index.css">
+        <link href= "https://fonts.googleapis.com/css?family=Indie+Flower" rel= "stylesheet">
     </head>
     <body>
         <div class= "container">
             <section class= "main-page" role= "main">
                 <h1>Educator Locator</h1>
                 <h3>The Right Education. The Right Place. Right Now.</h3>
-                <form id="search-form">
-                    <label for="search city"></label>
-                    <input type="text" placeholder="Search Cities & States Now" id="local-search" required>
-                    <label for="search state"></label>
-                    <input type="text" placeholder="" id="state-search" required>
-                    <input type="submit" value="Search" id="show-me-schools-button">
+                <form id= "search-form" role= "search">
+                    <label for= "search city"></label>
+                    <input type= "text" placeholder= "Search Cities & States Now" id= "local-search" required>
+                    <label for= "search state"></label>
+                    <input type= "text" placeholder= "" id= "state-search" required>
+                    <input type= "submit" value= "Search" id= "show-me-schools-button">
                  </form>
-                 <h2 id="error-message"></h2>
+                 <h2 id= "error-message"></h2>
             </section>
-            <section class="education-level-page" role="region">
+            <section class= "education-level-page" role= "region">
 
             </section>
-            <section class="results-page" role="region">
-                <div class="school-results">
+            <section class= "results-page" role= "region">
+                <div class= "school-results" aria-live= "polite">
                     <h2>Kindergarden - 12th Grade</h2>
-                    <ul class="school-list">
+                    <ul class= "school-list">
 
                     </ul>
                 </div>
-                <div class="college-results">
+                <div class= "college-results" aria-live="polite">
                     <h2>Colleges & Universities</h2>
-                    <ul class="college-list">
+                    <ul class= "college-list">
 
                     </ul>
                 </div>
             </section>
-            <section class="button-area" role="button">
+            <section class= "button-area" role= "button">
                 <div>
-                    <button id="new-search-button">New Search</button>
+                    <button id= "new-search-button">New Search</button>
                 </div>
             </section>
-            <footer role="contentinfo">
+            <footer role= "contentinfo">
                 <span>Created by Navin K.</span>
             </footer>
         </div>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-        <script type="text/javascript" src="index.js"></script>
+        <script type= "text/javascript" src= "https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script type= "text/javascript" src= "index.js"></script>
     </body>
 </html>
