@@ -1,406 +1,399 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    background: url('https://backgroundcheckall.com/wp-content/uploads/2017/12/education-background-images-hd.jpg') no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+  background: url("https://backgroundcheckall.com/wp-content/uploads/2017/12/education-background-images-hd.jpg");
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
 
 body {
-    color: white;
-    background-attachment: fixed;
-    font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  background-attachment: fixed;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-
 #search-form {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 30px;
 }
 
 #show-me-schools-button {
-    opacity: 0.7;
-    position: absolute;
-    top: 35%;
-    left: 40%;
-    font-weight: bold;
-    border: 1px solid brown;
-    border-radius: 15px;
-    width: 70px;
-    height: 35px;
-    cursor: pointer;
-    background: #F4A460;
-    transition-property: background;
-    transition-duration: 1s;
-    transition-timing-function: linear;
+  opacity: 0.7;
+  position: absolute;
+  top: 35%;
+  left: 40%;
+  font-weight: bold;
+  border: 1px solid brown;
+  border-radius: 15px;
+  width: 70px;
+  height: 35px;
+  cursor: pointer;
+  background: #f4a460;
+  transition-property: background;
+  transition-duration: 1s;
+  transition-timing-function: linear;
 }
 
 #show-me-schools-button:hover {
-    background: #FFFF00;
+  background: #ffff00;
 }
 
 h1,
 h2,
 h3 {
-    text-align: center;
+  text-align: center;
 }
 
 h3 {
-    font-size: 13px;
-    font-family: 'Indie Flower', cursive;
+  font-size: 13px;
+  font-family: "Indie Flower", cursive;
 }
 
 input {
-    margin-top: 5px;
+  margin-top: 5px;
 }
 
 #local-search,
 #state-search {
-    font-style: italic;
-    height: 50px;
-    opacity: 0.7;
-    font-size: 20px;
-    padding-right: 5px;
-    border-bottom: solid 5px brown;
-    background: tan;
-    transition-property: background;
-    transition-duration: 1s;
-    transition-timing-function: linear;
+  font-style: italic;
+  height: 50px;
+  opacity: 0.7;
+  font-size: 20px;
+  padding-right: 5px;
+  border-bottom: solid 5px brown;
+  background: tan;
+  transition-property: background;
+  transition-duration: 1s;
+  transition-timing-function: linear;
 }
 
 #local-search:hover,
 #state-search:hover {
-    background: yellow;
+  background: yellow;
 }
 
 .results-page {
-    display: none;
-    margin-top: 30px;
+  display: none;
+  margin-top: 30px;
 }
 
 .school-results,
 .college-results {
-    height: 425px;
-    width: 425px;
-    margin-left: auto;
-    margin-right: auto;
-    overflow: visible;
-    font-size: 10px;
+  height: 425px;
+  width: 425px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: visible;
+  font-size: 10px;
 }
 
 .school-results > h2,
 .college-results > h2 {
-    margin-top: 0%;
-    font-size: 18px;
-    color: yellow;
-    opacity: 0.7;
-    text-decoration: underline;
+  margin-top: 0%;
+  font-size: 18px;
+  color: yellow;
+  opacity: 0.7;
+  text-decoration: underline;
 }
 
 .image {
-    height: 150px;
-    width: 150px;
-    margin-top: 20px;
-    cursor: pointer;
-    opacity: 0.8;
-    background-size: 150px 150px;
-    background-repeat: no-repeat;
+  height: 150px;
+  width: 150px;
+  margin-top: 20px;
+  cursor: pointer;
+  opacity: 0.8;
+  background-size: 150px 150px;
+  background-repeat: no-repeat;
 }
 
 .education-images {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #education-level-question {
-    margin-top: 0%;
-    color: white;
-    font-size: 20px;
+  margin-top: 0%;
+  color: white;
+  font-size: 20px;
 }
 
 #new-search-button {
-    display: none;
-    position: absolute;
-    bottom: 5%;
-    left: 37%;
-    opacity: 0.7;
-    border: 2px solid brown;
-    margin-bottom: 0%;
-    font-weight: bold;
-    cursor: pointer;
-    background: yellow;
-    transition-property: background;
-    transition-duration: 1s;
-    transition-timing-function: linear;
+  display: none;
+  position: absolute;
+  bottom: 5%;
+  left: 37%;
+  opacity: 0.7;
+  border: 2px solid brown;
+  margin-bottom: 0%;
+  font-weight: bold;
+  cursor: pointer;
+  background: yellow;
+  transition-property: background;
+  transition-duration: 1s;
+  transition-timing-function: linear;
 }
 
 #new-search-button:hover {
-    background: #FFFF00;
+  background: #ffff00;
 }
 
-
 span {
-    margin-bottom: 0%;
-    margin-top: 10px;
-    color: yellow;
-    opacity: 0.8;
+  margin-bottom: 0%;
+  margin-top: 10px;
+  color: yellow;
+  opacity: 0.8;
 }
 
 #local-search {
-    width: 260px;
+  width: 260px;
 }
 
 #state-search {
-    width: 50px;
+  width: 50px;
 }
 
 .apple {
-    margin-bottom: 10px;
-    background-image: url('https://unixtitan.net/images/apple-clip-ten-4.png');
+  margin-bottom: 10px;
+  background-image: url("https://unixtitan.net/images/apple-clip-ten-4.png");
 }
 
 .orange {
-    background-image: url('https://cdn.pixabay.com/photo/2016/03/03/17/15/fruit-1234657__340.png');
+  background-image: url("https://cdn.pixabay.com/photo/2016/03/03/17/15/fruit-1234657__340.png");
 }
 
 .school-list,
 .college-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 input::placeholder {
-    padding-left: 10px;
+  padding-left: 10px;
 }
 
 #college-address,
 #school-address {
-    font-size: 12px;
-    font-family: 'Indie Flower', cursive;
+  font-size: 12px;
+  font-family: "Indie Flower", cursive;
 }
 
 #college-name,
 #school-name {
-    font-size: 16px;
-    font-family: 'Indie Flower', cursive;
-    font-weight: bold;
+  font-size: 16px;
+  font-family: "Indie Flower", cursive;
+  font-weight: bold;
 }
 
 li {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    line-height: 0%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 0%;
 }
 
 footer > span {
-    position: absolute;
-    bottom: 0%;
-    right: 1%;
-    font-size: 10px;
-    color: black;
-    font-weight: bold;
-    position: fixed;
+  position: absolute;
+  bottom: 0%;
+  right: 1%;
+  font-size: 10px;
+  color: black;
+  font-weight: bold;
+  position: fixed;
 }
 
 .header {
-    height: 30%;
-    margin-top: 30%;
-    margin-bottom: 35%;
-    font-family: 'Indie Flower', cursive;
-    font-size: 60px;
+  height: 30%;
+  margin-top: 30%;
+  margin-bottom: 35%;
+  font-family: "Indie Flower", cursive;
+  font-size: 60px;
 }
 
 @media screen and (min-width: 768px) {
-    
-    h1 {
-        font-size: 35px;
-    }
+  h1 {
+    font-size: 35px;
+  }
 
-    h3 {
-        margin-top: 0px;
-        font-size: 15px;
-    }
+  h3 {
+    margin-top: 0px;
+    font-size: 15px;
+  }
 
-    .main-page {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+  .main-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    #search-form {
-        margin-top: 0%;
-    }
+  #search-form {
+    margin-top: 0%;
+  }
 
-    #local-search {
-        height: 70px;
-        width: 550px;
-        font-size: 40px;
-    }
+  #local-search {
+    height: 70px;
+    width: 550px;
+    font-size: 40px;
+  }
 
-    #state-search {
-        height: 70px;
-        width: 100px;
-        font-size: 40px;
-    }
+  #state-search {
+    height: 70px;
+    width: 100px;
+    font-size: 40px;
+  }
 
-    #show-me-schools-button {
-        top: 45%;
-        left: 45%;
-        width: 100px;
-        height: 50px;
-        border: 2px solid brown;
-        font-size: 15px;
-    }
+  #show-me-schools-button {
+    top: 45%;
+    left: 45%;
+    width: 100px;
+    height: 50px;
+    border: 2px solid brown;
+    font-size: 15px;
+  }
 
-    .education-images {
-     position: absolute;
-     top: 0%;
-     left: 20%;
-    }
+  .education-images {
+    position: absolute;
+    top: 0%;
+    left: 20%;
+  }
 
-    #education-level-question {
-        font-size: 30px;
-        margin-top: 15px;
+  #education-level-question {
+    font-size: 30px;
+    margin-top: 15px;
+  }
 
-    }
+  #new-search-button {
+    position: absolute;
+    bottom: 95%;
+    left: 77%;
+    border: 2px solid brown;
+    width: 175px;
+    font-size: 15px;
+    position: fixed;
+    background-color: #f4a460;
+  }
 
-    #new-search-button {
-        position: absolute;
-        bottom: 95%;
-        left: 77%;
-        border: 2px solid brown;
-        width: 175px;
-        font-size: 15px;
-        position: fixed;
-        background-color: #F4A460;
+  .image {
+    height: 165px;
+    width: 165px;
+    background-size: 165px 165px;
+  }
 
-    }
+  .school-results,
+  .college-results {
+    position: absolute;
+    top: 3%;
+    left: 5%;
+    height: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: visible;
+    font-size: 10px;
+  }
 
-    .image {
-        height: 165px;
-        width: 165px;
-        background-size: 165px 165px;
-    }
+  #college-address,
+  #school-address {
+    font-size: 14px;
+  }
 
-    .school-results,
-    .college-results {
-        position: absolute;
-        top: 3%;
-        left: 5%;
-        height: 100%;
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        overflow: visible;
-        font-size: 10px;
-    }
+  #college-name,
+  #school-name {
+    font-size: 16px;
+  }
 
-    #college-address,
-    #school-address {
-        font-size: 14px;
-    }
-    
-    #college-name,
-    #school-name {
-        font-size: 16px;
-    }
-
-    .header {
-        font-size: 65px;
-    }
-
+  .header {
+    font-size: 65px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
-    h1 {
-        font-size: 47px;
-    }
+  h1 {
+    font-size: 47px;
+  }
 
-    h3 {
-        font-size: 22px;
-    }
+  h3 {
+    font-size: 22px;
+  }
 
-    #show-me-schools-button {
-        top: 45%;
-        left: 45%;
-        width: 125px;
-        height: 50px;
-        border: 3px solid brown;
-        font-size: 18px;
-    }
+  #show-me-schools-button {
+    top: 45%;
+    left: 45%;
+    width: 125px;
+    height: 50px;
+    border: 3px solid brown;
+    font-size: 18px;
+  }
 
-    .image {
-        height: 225px;
-        width: 225px;
-        background-size: 225px 225px;
-    }
+  .image {
+    height: 225px;
+    width: 225px;
+    background-size: 225px 225px;
+  }
 
-    .apple .header {
-        margin-top: 35%;
-    }
+  .apple .header {
+    margin-top: 35%;
+  }
 
-    .orange .header {
-        margin-left: 0%;
-    }
+  .orange .header {
+    margin-left: 0%;
+  }
 
-    #new-search-button {
-        position: absolute;
-        bottom: 96%;
-        left: 86%;
-        border: 3px solid brown;
-        width: 175px;
-        font-size: 15px;
-        position: fixed;
-    }
+  #new-search-button {
+    position: absolute;
+    bottom: 96%;
+    left: 86%;
+    border: 3px solid brown;
+    width: 175px;
+    font-size: 15px;
+    position: fixed;
+  }
 
-    .school-results > h2,
-    .college-results > h2 {
-        margin-top: 0%;
-        font-size: 28px;
-    }
+  .school-results > h2,
+  .college-results > h2 {
+    margin-top: 0%;
+    font-size: 28px;
+  }
 
-    #local-search {
-        height: 90px;
-        width: 650px;
-        font-size: 50px;
-    }
+  #local-search {
+    height: 90px;
+    width: 650px;
+    font-size: 50px;
+  }
 
-    #state-search {
-        height: 90px;
-        width: 100px;
-        font-size: 50px;
-    }
+  #state-search {
+    height: 90px;
+    width: 100px;
+    font-size: 50px;
+  }
 
-    #education-level-question {
-        font-size: 40px;
-        margin-top: 30px;
-    }
+  #education-level-question {
+    font-size: 40px;
+    margin-top: 30px;
+  }
 
-    #college-address,
-    #school-address {
-        font-size: 19px;
-    }
-    
-    #college-name,
-    #school-name {
-        font-size: 24px;
-    }
+  #college-address,
+  #school-address {
+    font-size: 19px;
+  }
 
-    footer > span {
-        font-size: 12px;
-    }
+  #college-name,
+  #school-name {
+    font-size: 24px;
+  }
 
-    .header {
-        font-size: 85px;
-    }
+  footer > span {
+    font-size: 12px;
+  }
+
+  .header {
+    font-size: 85px;
+  }
 }
